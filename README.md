@@ -4,7 +4,10 @@ Simple Paste Bin like HTTP service.
 
 ### Compile
 
-`go build`
+```
+go get -u github.com/syndtr/goleveldb/leveldb
+go build
+```
 
 ### API
 
