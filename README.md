@@ -2,6 +2,10 @@
 
 Simple Paste Bin like HTTP service.
 
+### Compile
+
+`go build`
+
 ### API
 
 The following HTTP end point methods are available
