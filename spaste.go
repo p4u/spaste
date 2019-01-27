@@ -42,7 +42,7 @@ func dumpDB(d *leveldb.DB, w http.ResponseWriter) {
 }
 
 func reply(resp string, w http.ResponseWriter) {
-	w.Header().Set("content-type", "application/text")
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	w.Write([]byte(resp))
 }
 
