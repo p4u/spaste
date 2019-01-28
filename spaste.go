@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"log"
 	"net/http"
@@ -51,12 +52,12 @@ func handler(w http.ResponseWriter, req *http.Request) {
 	params := strings.Split(req.RequestURI, "/")
 	log.Printf("Received %s from %s\n", params, req.RemoteAddr)
 	if params[1] == "add" {
-		data := req.FormValue("data")
+		buf := new(bytes.Buffer)
+		buf.ReadFrom(req.Body)
+		data := buf.String()
 		var key string
 		if len(params) > 2 {
 			key = params[2]
-		} else {
-			key = req.FormValue("key")
 		}
 		if len(key) < 1 {
 			key = fmt.Sprintf("%d", time.Now().Unix())

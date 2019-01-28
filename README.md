@@ -14,13 +14,17 @@ go build
 The following HTTP end point methods are available
 
 
-`/add/<paste_name>` adds a new paste identified by paste\_name. The POST "data" value is saved as content.
++ `/add/<paste_name>` 
+    adds a new paste identified by paste\_name. POST data is saved as conten.
 
-`/add` adds a new paste and returns the automatic identifcation name (unix timestamp). The POST "data" value is saved as content.
++ `/add` 
+    adds a new paste and returns the automatic identifcation name (unix timestamp). POST data is saved as content.
 
-`/list` list all pastes
++ `/list`
+    list all pastes
 
-`/get/<paste_name>` returns the content of paste identified by paste\_name
++ `/get/<paste_name>` 
+    returns the content of paste identified by paste\_name
 
 ### Example using curl
 
@@ -36,14 +40,16 @@ Start server at port 8888
 Add a new paste
 
 ```
-curl 127.0.0.1:8888/add/new_paste -d "data=This is my new paste"
+$ curl 127.0.0.1:8888/add/new_paste -d "This is my new paste"
+
 key=new_paste
 ```
 
 Get the paste content
 
 ```
-curl 127.0.0.1:8888/get/new_paste
+$ curl 127.0.0.1:8888/get/new_paste
+
 This is my new paste
 ```
 
@@ -64,4 +70,3 @@ Or sepcify server and port by setting variable content
 ```
 echo "HELLO WORLD!" | SERVER=127.0.0.1 PORT=8888 sh spaste.sh hello
 ```
-
