@@ -6,7 +6,8 @@ Simple Paste Bin like HTTP service.
 
 ```
 go get -u github.com/syndtr/goleveldb/leveldb
-go build
+go get -u github.com/p4u/spaste
+go build -o spaste github.com/p4u/spaste
 ```
 
 ### API
